@@ -1,5 +1,5 @@
 """
-URL configuration for Farmacia project.
+URL configuration for gestionFarmacia project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -40,7 +40,7 @@ urlpatterns = [
     path('sucursales/', inventario_views.lista_sucursales, name='lista_sucursales'),
     path('productos/', inventario_views.lista_productos, name='lista_productos'),
     path('inventario/', inventario_views.consultar_inventario, name='consultar_inventario'),
-    path('inventario/<int:sucursal_id>/', inventario_views.consultar_inventario, name='consultar_inventario_por_sucursal'),
+    path('inventario/sucursal/<int:sucursal_id>/', inventario_views.consultar_inventario_por_sucursal, name='consultar_inventario_por_sucursal'),
     path('transferir/<int:sucursal_id>/', inventario_views.transferir_producto, name='transferir_producto'),
 
 

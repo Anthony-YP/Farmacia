@@ -5,12 +5,12 @@
 {% block content %}
 <h1>
     {% if user.is_authenticated %}
-        Bienvenido, {{ user.username }}
+        Bienvenido {{ user.username }}
     {% else %}
         Bienvenido al Sistema de Gestión de Farmacia
     {% endif %}
 </h1>
-<p>Elige una opción para acceder a las funcionalidades del sistema:</p>
+<p>Elige una opción:</p>
 
 <ul class="list-group">
 
