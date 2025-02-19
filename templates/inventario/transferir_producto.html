@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Transferir Producto{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-sm p-4">
+        <h1 class="mb-4">Transferir Producto desde {{ sucursal_origen.nombre }}</h1>
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="producto" class="form-label">Producto:</label>
+                <select name="producto" id="producto" class="form-select" required>
+                    {% for producto in productos %}
+                    <option value="{{ producto.id }}">{{ producto.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="cantidad" class="form-label">Cantidad:</label>
+                <input type="number" name="cantidad" id="cantidad" class="form-control" required min="1" placeholder="Ingrese la cantidad">
+            </div>
+
+            <div class="mb-3">
+                <label for="sucursal_destino" class="form-label">Sucursal Destino:</label>
+                <select name="sucursal_destino" id="sucursal_destino" class="form-select" required>
+                    {% for sucursal in sucursales %}
+                    <option value="{{ sucursal.id }}">{{ sucursal.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Transferir Producto</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

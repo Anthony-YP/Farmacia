@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1>
+            {% if user.is_authenticated %}
+                Bienvenido {{ user.username }}
+            {% else %}
+                Bienvenido al Sistema de Gestión de Farmacia
+            {% endif %}
+        </h1>
+        <p class="lead">Elige una opción para continuar:</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+        <div class="col">
+            <a href="{% url 'lista_clientes' %}" class="btn btn-outline-primary w-100">Consultar Clientes</a>
+        </div>
+        <div class="col">
+            <a href="{% url 'lista_empleados' %}" class="btn btn-outline-primary w-100">Consultar Empleados</a>
+        </div>
+        <div class="col">
+            <a href="{% url 'perfil' %}" class="btn btn-outline-primary w-100">Mi Perfil</a>
+        </div>
+
+        {% if user.is_authenticated %}
+            <div class="col">
+                <a href="http://localhost:8000/admin/" class="btn btn-outline-secondary w-100">Administrar</a>
+                <a href="{% url 'mis_pedidos' %}" class="btn btn-outline-primary w-100">Mis Pedidos</a>
+            </div>
+        {% endif %}
+
+        <div class="col">
+            <a href="{% url 'lista_sucursales' %}" class="btn btn-outline-primary w-100">Gestión de Sucursales</a>
+        </div>
+        <div class="col">
+            <a href="{% url 'lista_productos' %}" class="btn btn-outline-primary w-100">Consultar Productos</a>
+        </div>
+        <div class="col">
+            <a href="{% url 'transferir_producto' sucursal_id=1 %}" class="btn btn-outline-primary w-100">Transferir Producto</a>
+        </div>
+        <div class="col">
+            <a href="{% url 'lista_pedidos' %}" class="btn btn-outline-primary w-100">Gestionar Pedidos</a>
+        </div>
+        <div class="col">
+            <a href="{% url 'crear_pedido' %}" class="btn btn-outline-primary w-100">Crear un Pedido</a>
+        </div>
+
+        {% if user.is_authenticated %}
+            <div class="col">
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-danger w-100">Cerrar Sesión</button>
+                </form>
+            </div>
+        {% else %}
+            <div class="col">
+                <a href="{% url 'login' %}" class="btn btn-outline-success w-100">Iniciar Sesión</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

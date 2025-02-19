@@ -1,0 +1,29 @@
+body {
+    font-family: 'Times New Roman', sans-serif;
+    background-color: #f8f9fa;
+    color: #000000;
+}
+
+.navbar {
+    box-shadow: 0px 4px 6px rgb(108, 118, 125);
+}
+
+h1 {
+    color: #ed7402;
+    text-align: center;
+    margin-bottom:20px;
+}
+
+.footer {
+    text-align: center;
+    color: #fbfbfb;
+}
+
+.list-group-item {
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #ed7402;
+}
