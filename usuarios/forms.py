@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
-from .models import Usuario
+from .models import Usuario, Cliente
 
 
 class RegistroUsuarioForm(UserCreationForm):

@@ -32,7 +32,6 @@ urlpatterns = [
 
     path('clientes/', usuarios_views.lista_clientes, name='lista_clientes'),
     path('empleados/', usuarios_views.lista_empleados, name='lista_empleados'),
-    path('dashboard/', usuarios_views.dashboard, name='dashboard'),
     path('perfil/', usuarios_views.perfil, name='perfil'),
     path('registro/', usuarios_views.registro, name='registro'),
 

@@ -16,7 +16,7 @@
     <tbody>
         {% for cliente in clientes %}
         <tr>
-            <td>{{ cliente.usuario.first_name }} {{ cliente.usuario.last_name }}</td>
+            <td>{{ cliente.usuario.username }}</td>
             <td>{{ cliente.usuario.email }}</td>
             <td>{{ cliente.usuario.telefono }}</td>
             <td>{{ cliente.direccion }}</td>

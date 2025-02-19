@@ -23,6 +23,7 @@ class PedidoForm(forms.ModelForm):
         self.fields['sucursal_destino'].queryset = Sucursal.objects.all()
 
 
+
         for field in self.fields:
             self.fields[field].widget.attrs.update({'class': 'form-control'})
 

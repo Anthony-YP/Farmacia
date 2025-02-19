@@ -33,7 +33,3 @@ def registro(request):
 def perfil(request):
 
     return render(request, 'usuarios/perfil.html', {'user': request.user})
-@login_required
-def dashboard(request):
-
-    return render(request, 'usuarios/dashboard.html', {'user': request.user})

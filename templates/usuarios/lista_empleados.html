@@ -17,10 +17,10 @@
     <tbody>
         {% for empleado in empleados %}
         <tr>
-            <td>{{ empleado.usuario.first_name }} {{ empleado.usuario.last_name }}</td>
-            <td>{{ empleado.usuario.email }}</td>
-            <td>{{ empleado.usuario.telefono }}</td>
-            <td>{{ empleado.usuario.get_rol_display }}</td>
+            <td>{{ empleado.usuario.username}}</td>
+            <td>{{ empleado.usuario.email}}</td>
+            <td>{{ empleado.usuario.telefono}}</td>
+            <td>{{ empleado.usuario.get_rol_display}}</td>
             <td>{{ empleado.puesto }}</td>
         </tr>
         {% endfor %}
